@@ -17,9 +17,9 @@ $roundness: 20px 0 20px 0;
 
 $color-btns: (
 	default: $color-main,
-	hot: $red,
-	cool: $blue,
-	awesome: $purple
+	//hot: $red,
+	//cool: $blue,
+	//awesome: $purple
 );
 
 @each $key, $value in $color-btns {

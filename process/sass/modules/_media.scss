@@ -1,5 +1,5 @@
-$color-item-border: $red;
-$color-media-head:  $blue;
+//$color-item-border: $red;
+//$color-media-head:  $blue;
 
 .media {
   margin: 0;
@@ -10,12 +10,12 @@ $color-media-head:  $blue;
     padding-bottom: 10px;
     padding-top: 10px;
     padding-left: 10px;
-    border-top: 1px dotted $color-item-border;
+    //border-top: 1px dotted $color-item-border;
     &:hover {
-      background: $yellow;
+      //background: $yellow;
     }
     &:last-of-type {
-      border-bottom: 1px dotted $color-item-border;
+      //border-bottom: 1px dotted $color-item-border;
     }
     @include clearfix;
   }
@@ -23,10 +23,10 @@ $color-media-head:  $blue;
   .head {
     margin: 0;
     padding: 0;
-    color: $color-media-head;
+    //color: $color-media-head;
     font-size: 2rem;
     #typography & {
-      color: $red;
+      //color: $red;
     }
   }
 

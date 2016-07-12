@@ -7,9 +7,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <section class="container"></section>
-  <section class="container"></section>
-  <section class="container"></section>
+  
+  <div id='page'>
+    <nav>
+    
+    </nav>
+    <section class="container cards-contain">Cards</section>
+    <section class="container forms-contain">
+      <form id="pret">
+        <div id="currency-contain">
+          <input type="button" value="HTG">
+          <input type="button" value="USD">
+          <input type="button" value="EUR">
+        </div>
+        <div id="field-contain">
+          <div class="simul">
+          <label>Principal</label>
+          <input type="text">
+          </div>
+          <div class="simul">
+          <label>Taux</label>
+          <input type="text">
+          </div>
+          <div class="simul">
+          <label>Durée</label>
+          <input type="text">
+          </div>
+        </div>
+        <div id="frequence-contain">
+          <label for='freq'>
+            <input type='radio' name='freq' value="2">
+            2 paiements par an
+          </label>
+          <label for='freq'><input type='radio' name='freq' value="6"> 6 paiements par an</label>
+          <label for='freq'>
+          <input type='radio' name='freq' value="12" checked="true"> 12 paiements par an</label>
+        </div>
+      </form>
+    </section>
+    <section class="container tables-contain">Tables</section>
+  </div>
   <script src="js/script.js"></script>
 </body>
 </html>

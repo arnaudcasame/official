@@ -1,4 +1,4 @@
-$color-even-cells: transparentize($yellow, .8);
+//$color-even-cells: transparentize($yellow, .8);
 
 .table {
   font-size: 1.5rem;
@@ -17,29 +17,29 @@ $color-even-cells: transparentize($yellow, .8);
     > tr {
 
       &:hover {
-        background-color: darken(adjust-hue($color-backgrounds, -20deg), 10%);
+       // background-color: darken(adjust-hue($color-backgrounds, -20deg), 10%);
       }
 
       &:nth-child(even) {
-        background-color: $color-even-cells;
+        //background-color: $color-even-cells;
 
         &:hover {
-          background-color: opacify($color-even-cells, .3);
+          //background-color: opacify($color-even-cells, .3);
         }
       }
       > th,
       > td {
         padding: 10px;
-        border-bottom: 1px dotted $blue;
+       // border-bottom: 1px dotted $blue;
       }
     }
   }
 
   >thead >tr {
-    background-color: $blue;
+   // background-color: $blue;
     color: $color-backgrounds;
     &:hover {
-      background-color: complement($blue);
+      //background-color: complement($blue);
     }
     >th {
       border-bottom :0;
