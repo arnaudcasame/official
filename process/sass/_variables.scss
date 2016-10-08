@@ -1,23 +1,34 @@
 // Load Fonts
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700';
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Merriweather|Josefin+Slab|Oswald|Bree+Serif);
+// As RGBa codes */
 
-$dkgray:    	#2f2f2f;
-$lightdkgray:	#022933;
-$white: 		#fff;
-$darkergray:	#212121;
-$lightgray: 	#797979;
+$rgba-primary-0        : rgba(125,125,125,1);	// Main Primary color */
+$rgba-primary-1        : rgba(218,217,217,1);
+$rgba-primary-2        : rgba(169,169,169,1);
+$rgba-primary-3        : rgba( 75, 75, 75,1);
+$rgba-primary-4        : rgba(  5,  5,  5,1);
 
 
-$color-main: $white;
-$color-backgrounds: $dkgray;
-$color-bg-containers: $darkergray;
-$color-input-borders: $lightgray;
-$color-headlines: $white;
+$gray                    : #7D7D7D;
+$darkgray                : #4B4B4B;
+$lightergray-01          : #A9A9A9;
+$lightergray-02          : #D7D7D7;
+$white                   : #ffffff;
+$darkergray              : #212121;
+$lightgray               : #797979;
+$almost-black            : #050505;
+
+
+$color-main              : $white;
+$color-backgrounds       : $darkgray;
+$color-bg-containers     : $darkergray;
+$color-input-borders     : $lightgray;
+$color-headlines         : $white;
 
 
 $font-main: 'Open Sans', Helvetica, sans-serif;
-$font-highlight: 'Bree Serif', Helvetica, sans-serif;
+$font-highlight: 'Open Sans', Helvetica, sans-serif;
 
 //breakpoints
 

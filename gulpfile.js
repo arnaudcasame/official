@@ -5,9 +5,13 @@ var gulp = require('gulp'),
     webserver = require('gulp-webserver');
 
 gulp.task('js', function() {
-  return gulp.src('builds/sassEssentials/js/myscript.js')
+  return gulp.src('builds/development/js/myscript.js')
     .pipe(jshint('./.jshintrc'))
     .pipe(jshint.reporter('jshint-stylish'));
+});
+
+gulp.task('html', function(){
+	gulp.src('builds/development/*.html');
 });
 
 gulp.task('sass', function () {
@@ -19,20 +23,22 @@ gulp.task('sass', function () {
         console.error('Error!', err.message);
     })
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('builds/sassEssentials/css'));
+    .pipe(gulp.dest('builds/development/css'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('builds/sassEssentials/js/**/*', ['js']);
+  gulp.watch('builds/development/*.html', ['html']);
+  gulp.watch('builds/development/js/**/*', ['js']);
   gulp.watch(['process/sass/**/*'], ['sass']);
 });
 
 gulp.task('webserver', function() {
-    gulp.src('builds/sassEssentials/')
+    gulp.src('builds/development/')
         .pipe(webserver({
             livereload: true,
-            open: true
+            open: true,
+            port: 1010
         }));
 });
 
-gulp.task('default', ['watch', 'sass','webserver']);
+gulp.task('default', ['watch', 'html', 'sass','webserver']);

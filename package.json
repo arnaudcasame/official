@@ -1,12 +1,12 @@
 {
-  "name": "sassEssentials",
+  "name": "Leyawt",
   "version": "0.0.1",
-  "description": "A website for my Sass Essential Training course on Lynda.com",
+  "description": "A layout that I'm gonna style for my next project",
   "repository": {
     "type": "git",
-    "url": "https://github.com/planetoftheweb/sassEssentials.git"
+    "url": "?.git"
   },
-  "author": "Ray Villalobos",
+  "author": "Arnaud Casamé",
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-jshint": "^1.9.0",
