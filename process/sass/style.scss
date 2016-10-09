@@ -1,12 +1,9 @@
-@import "variables";
-@import "normalize";
-@import "font-awesome";
-@import "mixins";
-@import "base";
-@import "interface";
+@import 'libs/normalize';
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+@import url('font-awesome.min.css');
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
 
-@import "modules/backgrounds";
-@import "modules/media";
-@import "modules/tables";
-@import "modules/navigation";
-@import "modules/container";
+@import "backgrounds";
+@import "presentation";
