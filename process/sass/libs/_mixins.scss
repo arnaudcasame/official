@@ -54,3 +54,40 @@
 	@return url("data:image/svg+xml;charset=utf8,#{$svg}");
 
 }
+
+/// Adds a browser prefix to the property
+/// @param {*} $property Property
+/// @param {*} $value Value
+
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+   -khtml-#{$property}: #{$value};
+     -moz-#{$property}: #{$value};
+      -ms-#{$property}: #{$value};
+       -o-#{$property}: #{$value};
+          #{$property}: #{$value};
+}
+
+/// Border Radius
+/// @param {Size} $radius [5px] - Radius
+/// @require {mixin} css3-prefix
+
+@mixin border-radius($radius: 5px) {
+    @include css3-prefix('border-radius', $radius);
+}
+
+
+/// Background Gradient
+/// @param {Color} $startColor [#3C3C3C] - Start Color
+/// @param {Color} $endColor [#999999] - End Color
+
+@mixin background-gradient($start, $startColor, $percent1, $middleColor, $percent2, $endColor, $percent3) {
+    background-color: $startColor;
+    background-image: url(images/overlay2.png), url(images/overlay3.svg), -webkit-gradient(linear, $start, $startColor $percent1, $middleColor $percent2, $endColor $percent3);
+    background-image: url(images/overlay2.png), url(images/overlay3.svg), -webkit-linear-gradient($start, $startColor $percent1, $middleColor $percent2, $endColor $percent3);
+    background-image: url(images/overlay2.png), url(images/overlay3.svg),  -moz-linear-gradient($start, $startColor $percent1, $middleColor $percent2, $endColor $percent3);
+    background-image: url(images/overlay2.png), url(images/overlay3.svg),   -ms-linear-gradient($start, $startColor $percent1, $middleColor $percent2, $endColor $percent3);
+    background-image: url(images/overlay2.png), url(images/overlay3.svg),    -o-linear-gradient($start, $startColor $percent1, $middleColor $percent2, $endColor $percent3);
+    background-image: url(images/overlay2.png), url(images/overlay3.svg),      linear-gradient($start, $startColor $percent1, $middleColor $percent2, $endColor $percent3);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
+}

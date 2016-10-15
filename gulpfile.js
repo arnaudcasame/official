@@ -2,12 +2,22 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     sass = require('gulp-ruby-sass'),
     sourcemaps = require('gulp-sourcemaps'),
-    webserver = require('gulp-webserver');
+    webserver = require('gulp-webserver'),
+    concat = require('gulp-concat');
 
-gulp.task('js', function() {
-  return gulp.src('builds/development/js/myscript.js')
-    .pipe(jshint('./.jshintrc'))
-    .pipe(jshint.reporter('jshint-stylish'));
+var jsSources = ['process/js/myscript.js', 'process/js/canvas.js'];
+
+
+// gulp.task('js', function() {
+//   return gulp.src('builds/development/js/main.js')
+//     .pipe(jshint('./.jshintrc'))
+//     .pipe(jshint.reporter('jshint-stylish'));
+// });
+
+gulp.task('autojs', function(){
+  gulp.src(jsSources).
+    pipe(concat('script.js')).
+    pipe(gulp.dest('builds/development/js'));
 });
 
 gulp.task('html', function(){
@@ -28,8 +38,8 @@ gulp.task('sass', function () {
 
 gulp.task('watch', function() {
   gulp.watch('builds/development/*.html', ['html']);
-  gulp.watch('builds/development/js/**/*', ['js']);
   gulp.watch(['process/sass/**/*'], ['sass']);
+  gulp.watch(['process/js/**/*'], ['autojs']);
 });
 
 gulp.task('webserver', function() {
@@ -41,4 +51,4 @@ gulp.task('webserver', function() {
         }));
 });
 
-gulp.task('default', ['watch', 'html', 'sass','webserver']);
+gulp.task('default', ['watch', 'html', 'autojs', 'sass','webserver']);
