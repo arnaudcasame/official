@@ -1,4 +1,4 @@
-$(".nav").localScroll();
+// $(".nav").localScroll();
 
 
 
@@ -31,11 +31,12 @@ function getDistance(wide){
 
 var sections = document.querySelectorAll('section');
 var scrollY = 0;
-var distance = getDistance(window.innerHeight);
+var distance = 40;
 var speed = window.innerHeight / distance;
 var bigHeight = null; 
 var portPosition = window.innerHeight * 2;
 var overallPosition = 0;
+var bioPosition = window.innerHeight;
 var currentY = null;
 var animator = null;
 
@@ -46,7 +47,7 @@ function autoScrollTo(el){
 		autoScrollTo(el);
 	}, 24);
 	if(el.id === 'bio'){
-		distance = getDistance(window.innerHeight);
+		distance = 40;
 		scrollY = currentY+distance;
 		window.scrollTo(0, scrollY);
 		if(scrollY >= portPosition){
@@ -56,7 +57,7 @@ function autoScrollTo(el){
 			return;
 		}
 	}else if(el.id === "portfolio"){
-		distance = - getDistance(window.innerHeight);
+		distance = - 40;
 		scrollY = currentY+distance;
 		window.scrollTo(0, scrollY);
 		if(scrollY <= overallPosition){
@@ -67,10 +68,10 @@ function autoScrollTo(el){
 		}
 	}else if(el.id === 'overall'){
 		bigHeight = window.innerHeight;
-		distance = getDistance(window.innerHeight);
+		distance = 40;
 		scrollY = currentY+distance;
 		window.scrollTo(0, scrollY);
-		if(scrollY >= bigHeight-(distance/2)){
+		if(scrollY >= bioPosition){
 			clearTimeout(animator);
 			return;
 		}

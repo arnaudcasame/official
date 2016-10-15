@@ -1,0 +1,30 @@
+@media all and (max-width: 560px){
+	.presentation{
+
+		article{
+			h1{
+				font-size : 1.5em;
+			}
+
+			p{
+				font-size: 1.2em;
+			}
+		}
+	}
+}
+
+@media all and (max-width: 465px){
+	.presentation{
+
+		article{
+			h1{
+				font-size : 1.2em;
+				font-weight: $weight-bold;
+			}
+
+			p{
+				font-size: 1em;
+			}
+		}
+	}
+}
