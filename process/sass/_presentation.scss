@@ -128,7 +128,7 @@
 			font-weight: 100;
 			font-size: 1.3em;
 			text-align: justify;
-			a{
+			a.github-link{
 				color: $white;
 				font-weight: bold;
 				text-decoration: none;
@@ -138,28 +138,73 @@
 			}
 		}
 		
-		.down{
-			text-align: center;
-			font-size: 1.5em;
-			cursor: pointer;
-		}
+		
 
 	}	
 }
 
 .mywork{
 	background-color: $accent3-alt;
-	
+	.skills-container{
+		width: 97%;
+		margin: auto;
+	}	
+	.skill{
+		display: inline-block;
+		width: 200px;
+		height: 80px;
+		background-color: white;
+		border-radius: 4px;
+		margin: 5px;
+		padding: 2px;
+		overflow: hidden;
+		color: #a5a5a5;
+		vertical-align: top;
+		-webkit-transition: all .25s linear;
+		   -moz-transition: all .25s linear;
+		    -ms-transition: all .25s linear;
+		     -o-transition: all .25s linear;
+		        transition: all .25s linear;
+		&:hover{
+			height: 200px;
+			cursor: pointer;
+			-webkit-transition: all .25s linear;
+			   -moz-transition: all .25s linear;
+			    -ms-transition: all .25s linear;
+			     -o-transition: all .25s linear;
+			        transition: all .25s linear;
+		}
+	}
+	.skill-heading{
+		height: 80px;
+
+		 img{
+		 	height: 100%;
+		 }
+		 h3{
+		 	width: 105px;
+		 	display: inline-block;
+		 	vertical-align: top;
+		 	word-wrap: break-word;
+		 }
+	}
+	.skill-details{
+		width: 100%;
+	}
 }
 
 #contact{
 	background-color: $accent1-alt;
 }
 
-.down{
+.levels .down{
 	text-align: center;
-	font-size: 1.5em;
 	cursor: pointer;
+	a{
+		color: white;
+		font-size: 30px;
+		text-decoration: none;
+	}
 }
 
 
