@@ -9,5 +9,9 @@
   "author": "Arnaud Casamé",
   "overrides": {
     "graceful-fs": "^4.2.11"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }
