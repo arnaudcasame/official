@@ -2,6 +2,7 @@
 node_modules
 .tmp
 .sass-cache
-builds
+builds/development
+builds/arnaudcasame.github.io
 wireframe
 icons_
