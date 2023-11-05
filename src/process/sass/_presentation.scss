@@ -1,0 +1,53 @@
+.presentation{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: url(images/overlay1.png), url(images/header.jpg);
+
+	article{
+		max-width: 700px;
+		width: 90%;
+		@include border-radius(6px);
+		color: $white;
+
+		h1{
+			font-weight: 300;
+			font-size: 1.8em;
+			text-align: right;
+		}
+
+		p{
+			
+			font-weight: 100;
+			font-size: 1.3em;
+			text-align: justify;
+			a.github-link {
+				color: $white;
+				font-weight: bold;
+				text-decoration: none;
+				i {
+					font-size: 1.3em;
+				}
+			}
+		}
+		
+		
+
+	}	
+}
+
+#contact{
+	background-color: $accent1-alt;
+}
+
+.levels .down{
+	text-align: center;
+	cursor: pointer;
+	a{
+		color: white;
+		font-size: 30px;
+		text-decoration: none;
+	}
+}
+
+

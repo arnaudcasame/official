@@ -2,6 +2,7 @@
 node_modules
 .tmp
 .sass-cache
-images/**
-slides/**
-builds/sassEssentials/css/style.css
+builds/development
+builds/arnaudcasame.github.io
+wireframe
+icons_
