@@ -11,7 +11,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Arnaud\'s Official',
+            title: 'Arnaud Casame',
             template: 'src/index.html'
         }),
     ],
