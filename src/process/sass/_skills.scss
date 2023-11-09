@@ -18,7 +18,13 @@
 
 		width: 90%;
 		overflow-y: scroll;
-	}	
+
+		-ms-overflow-style: none;  /* IE and Edge */
+  		scrollbar-width: none;  /* Firefox */
+	}
+	.skills-container::-webkit-scrollbar {
+		display: none;
+	}
 	.skill{
 		display: inline-block;
 		width: 200px;
