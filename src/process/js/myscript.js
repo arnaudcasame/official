@@ -12,11 +12,13 @@ fetch(dataUrl)
             board.animate();
         });
 
-        skills.addEventListener('mouseenter', function(){
-            board.scaleCards();
+        skills.addEventListener('mouseover', function(e){
+            board.identifyCard(e.clientX, e.clientY);
         })
 
-        skills.addEventListener('mouseleave', function(){
+        // skills.addEventListener('mouseenter', function(e){})
+
+        skills.addEventListener('mouseleave', function(e){
             board.unscaleCards();
         })
 
@@ -44,10 +46,10 @@ class CardBoard {
             const skillE = document.createElement('div');
             skillE.setAttribute('class', 'skill');
 
-            skillE.style['-webkit-transition'] = ".3s ease-in-out";
-            skillE.style['-moz-transition'] = ".3s ease-in-out";
-            skillE.style['-o-transition'] = ".3s ease-in-out";
-            skillE.style['transition'] = ".3s ease-in-out";
+            skillE.style['-webkit-transition'] = ".15s linear";
+            skillE.style['-moz-transition'] = ".15s linear";
+            skillE.style['-o-transition'] = ".15s linear";
+            skillE.style['transition'] = ".15s linear";
 
             const skillH = document.createElement('div');
             skillH.setAttribute('class', 'skill-heading');
@@ -71,9 +73,8 @@ class CardBoard {
             skills.push(skillE)
         }
         el.appendChild(fragment);
-        for (const skill of skills) {
-            this.cards.push(new SkillCard(skill, this.x, this.y, this.vx, this.vy));
-        }
+
+        this.cards = skills.map((skill, i)=> new SkillCard(skill, this.x, this.y, this.vx, this.vy, i))
     }
 
     animate() {
@@ -94,10 +95,23 @@ class CardBoard {
             card.scale(1, 1);
         }
     }
+
+    identifyCard(x, y){
+        for (const card of this.cards) {
+            if(card.isMyArea(x, y)){
+                card.scale(0.8, 0.8);
+            } else {
+                card.scale(1.3, 1.3);
+            }
+            if(card.isMyNeighborhood(x, y)){
+                card.scale(0.95, 0.95);
+            }
+        }
+    }
 }
 
 class SkillCard {
-    constructor(el, x, y, vx, vy){
+    constructor(el, x, y, vx, vy, id){
         this.el = el;
         this.parent = el.parentElement;
         this.pPosition = this.getPosition(el.parentElement);
@@ -107,6 +121,7 @@ class SkillCard {
         this.vx = vx;
         this.vy = vy;
         this.rotate =  0.1;
+        this.id = id;
     }
 
     moveHor(){
@@ -146,5 +161,29 @@ class SkillCard {
      */
     getPosition(el) {
         return el ? el.getBoundingClientRect() : undefined;
+    }
+
+    isMyArea(x, y){
+        const pos = this.getPosition(this.el);
+        if(x > pos.left && x < pos.right && y > pos.top && y < pos.bottom){
+            return true;
+        }
+        return false;
+    }
+
+    isMyNeighborhood(x, y){
+        const pos = this.getPosition(this.el);
+        // 
+        if(((x + 90) > pos.left && (x + 90) < pos.right && (y + 90) > pos.top && (y + 90) < pos.bottom) || 
+        ((x - 90) > pos.left && (x - 90) < pos.right && (y - 90) > pos.top && (y - 90) < pos.bottom) || 
+        ((x - 90) > pos.left && (x - 90) < pos.right && y  > pos.top && y  < pos.bottom) ||
+        ((x + 90) > pos.left && (x + 90) < pos.right && y  > pos.top && y  < pos.bottom) ||
+        (x > pos.left && x < pos.right && (y + 90) > pos.top && (y + 90)  < pos.bottom) ||
+        (x > pos.left && x < pos.right && (y - 90) > pos.top && (y - 90)  < pos.bottom) || 
+        ((x + 90) > pos.left && (x + 90) < pos.right && (y - 90) > pos.top && (y - 90) < pos.bottom) || 
+        ((x - 90) > pos.left && (x - 90) < pos.right && (y + 90) > pos.top && (y + 90) < pos.bottom)){
+            return true;
+        }
+        return false;
     }
 }
