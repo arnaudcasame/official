@@ -29,12 +29,21 @@ section#mywork {
             border-radius: 8px;
             border: none;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: -webkit-linear-gradient(top, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.02) 50%, rgba(255, 255, 255, 0.02) 61%, rgba(0, 0, 0, 0.02) 73%), -webkit-linear-gradient(57deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+            background: linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 50%, rgba(255, 255, 255, 0.02) 61%, rgba(0, 0, 0, 0.02) 73%), linear-gradient(33deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+            background-blend-mode: normal,color-burn;
 
             iframe {
-                width: 100%;
-                height: 100%;
+                width: 90%;
+                height: 90%;
                 padding: 0;
                 margin: 0;
+                border: none;
+                border-radius: 12px;
             }
         }
 
