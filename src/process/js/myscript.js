@@ -1,34 +1,11 @@
 // $(".nav").localScroll();
-const dataUrl = 'https://gist.githubusercontent.com/arnaudcasame/18db83b6e6791c728bd992f70f1b7d4d/raw/ce5101dbfea51f2f4dfdf6516a81539e96664963/portfolio.json'
-const skills = document.querySelector('.skills-container');
-
-fetch(dataUrl)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        const board = new CardBoard(skills, data);
-        skills.addEventListener('click', function (e) {
-            board.animate();
-        });
-
-        skills.addEventListener('mouseover', function(e){
-            board.identifyCard(e.clientX, e.clientY);
-        })
-
-        // skills.addEventListener('mouseenter', function(e){})
-
-        skills.addEventListener('mouseleave', function(e){
-            board.unscaleCards();
-        })
-
-    })
-    .catch(function (error) {
-        console.warn(error)
-    })
 
 
-class CardBoard {
+
+
+
+
+export class CardBoard {
     constructor(el, data){
         const num = document.querySelector('#num-skills');
         num.textContent = data.length;
@@ -110,7 +87,7 @@ class CardBoard {
     }
 }
 
-class SkillCard {
+export class SkillCard {
     constructor(el, x, y, vx, vy, id){
         this.el = el;
         this.parent = el.parentElement;
