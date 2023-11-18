@@ -9,6 +9,10 @@ section#my-projects {
         font-size: 2.5em;
     }
 
+    article::-webkit-scrollbar {
+		display: none;
+	}
+
     article {
         width: calc(90% - 40px);
         height: 650px;
