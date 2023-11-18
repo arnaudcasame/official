@@ -1,4 +1,4 @@
-.myskills{
+.my-tools{
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -10,7 +10,7 @@
 		font-size: 2.5em;
 	}
 
-	.skills-container{
+	.tools-container{
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
 		column-gap: 10px;
@@ -27,7 +27,7 @@
 	.skills-container::-webkit-scrollbar {
 		display: none;
 	}
-	.skill{
+	.tool{
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -45,7 +45,7 @@
 			cursor: pointer;
 		}
 	}
-	.skill-heading{
+	.tool-heading{
 		width: 80%;
 		
 		svg, img {
@@ -53,7 +53,7 @@
 			height: 100%;
 		}
 	}
-	.skill-details{
+	.tool-details{
 		width: 100%;
 
 		h4 {

@@ -1,11 +1,11 @@
-export class WorkCard {
+export class ProjectCard {
     constructor(el, data){
         const container = document.querySelector('.'+el);
-        const workCard = document.createElement('div');
-        workCard.setAttribute('class', 'work');
+        const projectCard = document.createElement('div');
+        projectCard.setAttribute('class', 'project');
 
-        const workWrapper = document.createElement('div');
-        workWrapper.setAttribute('class', 'work-wrapper');
+        const projectWrapper = document.createElement('div');
+        projectWrapper.setAttribute('class', 'project-wrapper');
 
         const frame = document.createElement('iframe');
         frame.setAttribute("src", data.address);
@@ -20,11 +20,11 @@ export class WorkCard {
             infos.appendChild(img);
         }
 
-        workWrapper.appendChild(frame);
-        workWrapper.appendChild(infos);
+        projectWrapper.appendChild(frame);
+        projectWrapper.appendChild(infos);
 
-        workCard.appendChild(workWrapper);
+        projectCard.appendChild(projectWrapper);
 
-        container.appendChild(workCard);
+        container.appendChild(projectCard);
     }
 }

@@ -5,9 +5,9 @@
 
 
 
-export class CardBoard {
+export class ToolsBoard {
     constructor(el, data){
-        const num = document.querySelector('#num-skills');
+        const num = document.querySelector('#num-tools');
         num.textContent = data.length;
 
         const fragment = document.createDocumentFragment();
@@ -17,41 +17,41 @@ export class CardBoard {
         this.vx = 2;
         this.vy = 1;
         this.cards = []
-        const skills = [];
+        const tools = [];
 
-        for (const skill of data) {
-            const skillE = document.createElement('div');
-            skillE.setAttribute('class', 'skill');
+        for (const tool of data) {
+            const toolE = document.createElement('div');
+            toolE.setAttribute('class', 'tool');
 
-            skillE.style['-webkit-transition'] = ".15s linear";
-            skillE.style['-moz-transition'] = ".15s linear";
-            skillE.style['-o-transition'] = ".15s linear";
-            skillE.style['transition'] = ".15s linear";
+            toolE.style['-webkit-transition'] = ".15s linear";
+            toolE.style['-moz-transition'] = ".15s linear";
+            toolE.style['-o-transition'] = ".15s linear";
+            toolE.style['transition'] = ".15s linear";
 
-            const skillH = document.createElement('div');
-            skillH.setAttribute('class', 'skill-heading');
-            skillE.appendChild(skillH);
+            const toolH = document.createElement('div');
+            toolH.setAttribute('class', 'tool-heading');
+            toolE.appendChild(toolH);
 
-            const skillD = document.createElement('div');
-            skillD.setAttribute('class', 'skill-details');
-            // skillE.appendChild(skillD);
+            const toolD = document.createElement('div');
+            toolD.setAttribute('class', 'tool-details');
+            // toolE.appendChild(toolD);
 
             const img = document.createElement('img');
-            img.setAttribute('src', skill.url);
-            img.setAttribute('alt', skill.name);
-            img.setAttribute('title', skill.name);
-            skillH.appendChild(img);
+            img.setAttribute('src', tool.url);
+            img.setAttribute('alt', tool.name);
+            img.setAttribute('title', tool.name);
+            toolH.appendChild(img);
 
             const h4 = document.createElement('h4');
-            h4.innerText = skill.name;
-            // skillD.appendChild(h4)
+            h4.innerText = tool.name;
+            // toolD.appendChild(h4)
 
-            fragment.appendChild(skillE);
-            skills.push(skillE)
+            fragment.appendChild(toolE);
+            tools.push(toolE)
         }
         el.appendChild(fragment);
 
-        this.cards = skills.map((skill, i)=> new SkillCard(skill, this.x, this.y, this.vx, this.vy, i))
+        this.cards = tools.map((tool, i)=> new ToolCard(tool, this.x, this.y, this.vx, this.vy, i))
     }
 
     animate() {
@@ -87,7 +87,7 @@ export class CardBoard {
     }
 }
 
-export class SkillCard {
+export class ToolCard {
     constructor(el, x, y, vx, vy, id){
         this.el = el;
         this.parent = el.parentElement;

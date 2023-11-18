@@ -1,8 +1,8 @@
 import './process/sass/style.scss';
 
 import me from './process/sass/images/me.jpg';
-import { CardBoard } from "./process/js/myscript";
-import { WorkCard } from "./process/js/work-info";
+import { ToolsBoard } from "./process/js/myscript";
+import { ProjectCard } from "./process/js/projects";
 
 // Adds my picture to the first page
 const mainHero = document.querySelector('#main-hero');
@@ -18,11 +18,11 @@ fetch(dataUrl)
     .then(function (data) {
 
         for (const project of data.projects) {
-            new WorkCard('projects', project)
+            new ProjectCard('projects', project)
         }
 
-        const skills = document.querySelector('.skills-container');
-        const board = new CardBoard(skills, data.tools);
+        const skills = document.querySelector('.tools-container');
+        const board = new ToolsBoard(skills, data.tools);
         skills.addEventListener('click', function (e) {
             board.animate();
         });
