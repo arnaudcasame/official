@@ -13,6 +13,8 @@ section.levels#my-certs {
 		padding: 20px;
 		overflow-y: scroll;
 
+        place-items: center;
+
 		-ms-overflow-style: none;  /* IE and Edge */
   		scrollbar-width: none;  /* Firefox */
 	}
