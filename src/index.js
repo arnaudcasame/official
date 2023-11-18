@@ -10,7 +10,7 @@ mainHero.src = me;
 
 
 
-const dataUrl = 'https://gist.githubusercontent.com/arnaudcasame/18db83b6e6791c728bd992f70f1b7d4d/raw/3fb194126d259dbafd7721fc9344623f288b459b/portfolio.json'
+const dataUrl = 'https://gist.githubusercontent.com/arnaudcasame/18db83b6e6791c728bd992f70f1b7d4d/raw/91d40b9f35b10d0453223b2829a668bcb100269b/portfolio.json'
 fetch(dataUrl)
     .then(function (response) {
         return response.json();
