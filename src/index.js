@@ -2,6 +2,7 @@ import './process/sass/style.scss';
 
 import me from './process/sass/images/me.jpg';
 import { ToolsBoard } from "./process/js/myscript";
+import { Certification } from "./process/js/certifications";
 import { ProjectCard } from "./process/js/projects";
 
 // Adds my picture to the first page
@@ -10,12 +11,18 @@ mainHero.src = me;
 
 
 
-const dataUrl = 'https://gist.githubusercontent.com/arnaudcasame/18db83b6e6791c728bd992f70f1b7d4d/raw/91d40b9f35b10d0453223b2829a668bcb100269b/portfolio.json'
+const dataUrl = 'https://gist.githubusercontent.com/arnaudcasame/18db83b6e6791c728bd992f70f1b7d4d/raw/767280f97db663f9b4f1a4453c827ab59987d586/portfolio.json'
 fetch(dataUrl)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
+        data.certs.sort((cert1, cert2) => Date.parse(cert1.date) - Date.parse(cert2.date));
+        const numCerts = document.querySelector('#num-certs');
+        numCerts.textContent = data.certs.length;
+        for (const cert of data.certs) {
+            new Certification('certs', cert)
+        }
 
         for (const project of data.projects) {
             new ProjectCard('projects', project)
