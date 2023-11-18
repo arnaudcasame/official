@@ -28,16 +28,16 @@
 		}
 	}
 
-	#mywork {
+	#my-projects {
 		.projects {
 			width: 100%;
 			grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
 			column-gap: 0;
 
-			.work {
+			.project {
 				width: 100%;
 	
-				.work-wrapper {
+				.project-wrapper {
 					width: 99%;
 					height: 99%;
 	
