@@ -1,6 +1,7 @@
 import './process/sass/style.scss';
 
 import me from './process/sass/images/me.jpg';
+import { Bio } from "./process/js/bio";
 import { ToolsBoard } from "./process/js/myscript";
 import { Certification } from "./process/js/certifications";
 import { ProjectCard } from "./process/js/projects";
@@ -11,12 +12,16 @@ mainHero.src = me;
 
 
 
-const dataUrl = 'https://gist.githubusercontent.com/arnaudcasame/18db83b6e6791c728bd992f70f1b7d4d/raw/767280f97db663f9b4f1a4453c827ab59987d586/portfolio.json'
+const dataUrl = 'https://gist.githubusercontent.com/arnaudcasame/18db83b6e6791c728bd992f70f1b7d4d/raw/90c3c791c023b9017a2517cdb6505ed093bded7a/portfolio.json'
 fetch(dataUrl)
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
+        // Bio
+        new Bio('bio', data.bio);
+
+        // Sorts the certificates by ascending dates
         data.certs.sort((cert1, cert2) => Date.parse(cert1.date) - Date.parse(cert2.date));
         const numCerts = document.querySelector('#num-certs');
         numCerts.textContent = data.certs.length;
@@ -24,10 +29,12 @@ fetch(dataUrl)
             new Certification('certs', cert)
         }
 
+        // Projects
         for (const project of data.projects) {
             new ProjectCard('projects', project)
         }
 
+        // Skills
         const skills = document.querySelector('.tools-container');
         const board = new ToolsBoard(skills, data.tools);
         skills.addEventListener('click', function (e) {
