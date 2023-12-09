@@ -3,6 +3,7 @@ section.levels#my-certs {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 
 	.certs {
 		display: grid;
@@ -50,6 +51,66 @@ section.levels#my-certs {
 	p.nav.down {
 		a {
 			color: $fg-bold;
+		}
+	}
+
+	.modal-container {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, .3);
+		z-index: 10;
+		
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 20px;
+
+		.modal-frame{
+			display: flex;
+			flex-direction: column;
+			width: calc(50% - 20px);
+			height: fit-content;
+			max-height: 100%;
+			background-color: $white;
+			border-radius: 16px;
+			overflow: hidden;
+
+			.frame-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				width: calc(100% - 30px);
+				padding: 5px 15px;
+				background-color: rgba(200, 200, 200, 0.7);
+
+				.close-btn {
+					cursor: pointer;
+				}
+			}
+
+			.frame-body {
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				width: 100%;
+				height: 100%;
+				overflow-y: scroll;
+				-ms-overflow-style: none;  /* IE and Edge */
+				scrollbar-width: none;  /* Firefox */
+				
+				div {
+					.cert-img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+			.frame-body::-webkit-scrollbar {
+				display: none;
+			}
 		}
 	}
 }
