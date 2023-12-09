@@ -1,14 +1,29 @@
 .presentation{
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-image: url(images/overlay1.png), url(images/header.jpg);
+
+	background: 
+        linear-gradient(90deg, #7E898F 0%, #636C75 100%), 
+        radial-gradient(at top, rgba(255, 255, 255, 0.50) 0%, rgba(0, 0, 0, 0.55) 100%), 
+        radial-gradient(at top, rgba(255, 255, 255, 0.90) 0%, rgba(0, 0, 0, 0.08) 63%),
+		url(images/overlay1.png);
+    background-blend-mode: multiply, screen;
+
+	article::-webkit-scrollbar {
+		display: none;
+	}
 
 	article{
-		max-width: 700px;
+		max-width: 800px;
 		width: 90%;
 		@include border-radius(6px);
 		color: $white;
+		overflow-y: scroll;
+
+		-ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
 
 		h1{
 			font-weight: 300;
@@ -30,9 +45,6 @@
 				}
 			}
 		}
-		
-		
-
 	}	
 }
 
