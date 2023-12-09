@@ -10,6 +10,7 @@ section#my-projects {
 
     article {
         width: calc(90% - 40px);
+        max-width: 1050px;
         height: 650px;
 		padding: 20px;
 		overflow-y: scroll;
