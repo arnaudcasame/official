@@ -15,9 +15,16 @@
 
 @media all and (max-width: 811px){
 	section.levels#my-certs {
-	
 		.certs {
 			width: calc(100% - 40px);
+		}
+
+		.modal-container {
+			padding: 10px;
+	
+			.modal-frame{
+				width: calc(82% - 20px);
+			}
 		}
 	}
 }
