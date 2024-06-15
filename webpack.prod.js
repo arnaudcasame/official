@@ -6,7 +6,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         filename: 'main.js',
-        path: path.resolve(__dirname, 'builds/arnaudcasame.github.io'),
+        path: path.resolve(__dirname, 'builds/production'),
         clean: true
     },
     plugins: [
