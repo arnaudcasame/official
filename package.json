@@ -8,7 +8,7 @@
     "start": "webpack serve --static --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "pages": "webpack --config webpack.githubpages.js",
-    "official": "git subtree push --prefix builds/production origin official2.0"
+    "official": "git subtree push --prefix builds/production origin gh-pages"
   },
   "repository": {
     "type": "git",
