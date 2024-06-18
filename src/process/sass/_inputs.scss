@@ -1,0 +1,27 @@
+.field {
+    position: relative;
+    width: 12.5rem;
+    height: 1.8rem;
+    z-index: 0;
+
+    i {
+        position: absolute;
+        top: 0.4rem;
+        left: 0.8rem;
+        z-index: 1;
+        color: rgb(240, 240, 240);
+    }
+
+    input {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgb(55, 47, 108);
+        outline-style: none;
+        border-style: none;
+        border-radius: 1.8rem;
+        padding: 5px 0.7rem 5px 2.3rem;
+        color: rgb(240, 240, 240);
+    }
+}

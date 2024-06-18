@@ -1,0 +1,48 @@
+
+.t-btn {
+
+    outline-style: none;
+    border-style: none;
+    background-color: inherit;
+    border-radius: 4px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(255, 255, 255, .2);
+    }
+}
+
+.center {
+
+    .t-btn {
+        i {
+            font-size: x-large;
+        }
+    
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+    }
+}
+
+.right {
+
+    .t-btn {
+        i {
+            font-size: medium;
+        }
+    
+        padding: 0 0.5rem;
+        height: 100%;
+    }
+
+}
+
+
+i.fa.gold{
+    color: gold;
+}
+
+i.fa.white{
+    color: $white;
+}

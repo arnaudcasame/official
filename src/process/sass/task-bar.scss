@@ -1,0 +1,47 @@
+.task-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 16px);
+    height: 3.2rem;
+    padding: 0 8px;
+    background-color: black;
+    z-index: 1;
+
+    .center {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    
+        width: fit-content;
+        height: 2.5rem;
+    
+        color: rgb(240, 240, 240);
+    
+        .clock {
+            display: flex;
+            align-items: center;
+    
+            div {
+                display: flex;
+                flex-direction: column;
+            }
+    
+            span {
+                font-size: 0.85rem;
+                text-align: right;
+                color: rgba(240, 240, 240, 1);
+            }
+        }
+    }
+}
+
