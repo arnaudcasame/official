@@ -5,6 +5,7 @@ import me from './process/sass/images/me.jpg';
 // import { ToolsBoard } from "./process/js/myscript";
 // import { Certification } from "./process/js/certifications";
 // import { ProjectCard } from "./process/js/projects";
+import { TaskBar } from "./process/js/task.bar";
 
 // Adds my picture to the first page
 const mainHero = document.querySelector('#main-hero');
@@ -18,8 +19,7 @@ fetch(dataUrl)
         return response.json();
     })
     .then(function (data) {
-        
-
+        const task = new TaskBar();
     })
     .catch(function (error) {
         console.warn(error)
