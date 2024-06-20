@@ -1,27 +1,28 @@
-export class TaskBar {
+export class TaskBar extends EventTarget {
     constructor() {
+        super();
         const centerTaskEl = document.querySelector('#center-task');
         const rightTaskEl = document.querySelector('#right-task');
 
         for (const item of centerTaskEl.children) {
             if(item.nodeName === 'BUTTON'){
-                new TaskButton(item);
+                item.addEventListener('click', (e)=>{
+                    this.emitItemClick(item.dataset.name);
+                });
             }
         }
 
         for (const item of rightTaskEl.children) {
             if(item.nodeName === 'BUTTON'){
-                new TaskButton(item);
+                item.addEventListener('click', (e)=>{
+                    this.emitItemClick(item.dataset.name);
+                });
             }
         }
 
     }
-}
 
-class TaskButton {
-    constructor(element){
-        element.addEventListener('click', (e)=>{
-            console.log(element.classList)
-        })
+    emitItemClick(btnName){
+        this.dispatchEvent(new CustomEvent('itemClick', { detail: btnName}))
     }
 }
