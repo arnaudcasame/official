@@ -1,0 +1,9 @@
+.menu {
+    position: absolute;
+    bottom: 8px;
+    left: calc(50% - (33%/2));
+    width: 33%;
+    height: 75dvh;
+    border-radius: 8px;
+    background-color: rgba(48, 48, 48, 0.95);
+}
