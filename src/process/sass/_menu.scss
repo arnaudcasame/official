@@ -23,7 +23,55 @@
     .recommended { }
 
     .profile {
-        background-color: aquamarine;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: black;
+
+        .wrap-profile {
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+
+            .pic-n-name {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .pic {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    text-align: center;
+
+                    i {
+                        font-size: xx-large;
+                        color: rgb(240, 240, 240);
+                    }
+                }
+
+                .name {
+                    font-size: 0.9rem;
+                    color: rgb(240, 240, 240);
+                }
+            }
+
+            .power {
+                outline-style: none;
+                border-style: none;
+                background: none;
+                color: rgb(240, 240, 240);
+
+                i {
+                    font-size: 1.3rem;
+                    font-weight: lighter;
+                }
+            }
+        }
     }
 }
 
