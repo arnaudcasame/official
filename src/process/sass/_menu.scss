@@ -41,3 +41,45 @@
         background-color: black;
     }
 }
+
+
+.menu > .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .inner {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: 95%;
+    
+        .header {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            
+            padding: 10px 0;
+    
+            color: rgb(240, 240, 240);
+    
+            h3 {
+                padding: 0;
+                margin: 0;
+                font-size: medium;
+            }
+    
+            span {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 3.5rem;
+                font-size: small;
+                padding: 0.3rem 0.5rem;
+                border-radius: 4px;
+                background-color: rgba(67, 67, 67, 0.95);
+                cursor: pointer;
+            }
+        }
+    }
+} 
