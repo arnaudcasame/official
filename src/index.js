@@ -6,6 +6,9 @@ import me from './process/sass/images/me.jpg';
 // import { Certification } from "./process/js/certifications";
 // import { ProjectCard } from "./process/js/projects";
 
+// DeskTop
+import { Desktop } from "./process/js/desktop";
+
 // TaskBar
 import { TaskBar } from "./process/js/task.bar";
 
@@ -20,9 +23,11 @@ fetch(dataUrl)
         return response.json();
     })
     .then(function (data) {
+        const desktop = new Desktop();
         const taskBar = new TaskBar();
         taskBar.addEventListener('itemClick', (event)=> {
             console.log(event);
+            desktop.toggleMainMenu();
         });
     })
     .catch(function (error) {

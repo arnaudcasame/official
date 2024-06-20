@@ -4,13 +4,17 @@
     grid-template-rows: 5rem 1fr 1fr 4.5rem;
 
     position: absolute;
-    bottom: 8px;
+    bottom: -75dvh;
     left: calc(50% - (33%/2));
     width: 33%;
     height: 75dvh;
     overflow: hidden;
     border-radius: 8px;
     background-color: rgba(48, 48, 48, 0.95);
+
+    transform: translateY(0dvh);
+    transition: transform 150ms linear;
+    transform-origin: bottom;
 
     .search {
         display: flex;
@@ -27,7 +31,7 @@
         justify-content: center;
         align-items: center;
 
-        background-color: black;
+        background-color: rgb(33, 33, 33);
 
         .wrap-profile {
             display: flex;
@@ -130,4 +134,10 @@
             }
         }
     }
-} 
+}
+
+.menu.open {
+    transform: translateY(-75.8dvh);
+    transform-origin: bottom;
+    transition: transform 150ms linear;
+}
