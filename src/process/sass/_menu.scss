@@ -13,7 +13,7 @@
     background-color: rgba(48, 48, 48, 0.95);
 
     transform: translateY(0dvh);
-    transition: transform 150ms linear;
+    transition: transform 100ms linear;
     transform-origin: bottom;
 
     .search {
@@ -42,13 +42,15 @@
                 display: flex;
                 align-items: center;
                 gap: 10px;
+                padding: 2px 8px;
+                border-radius: 4px;
 
                 .pic {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 40px;
-                    height: 40px;
+                    width: 35px;
+                    height: 35px;
                     border-radius: 50%;
                     text-align: center;
 
@@ -62,17 +64,29 @@
                     font-size: 0.9rem;
                     color: rgb(240, 240, 240);
                 }
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgba(82, 82, 82, 0.5);
+                }
             }
 
             .power {
                 outline-style: none;
                 border-style: none;
                 background: none;
+                border-radius: 4px;
+                padding: 0px 10px;
                 color: rgb(240, 240, 240);
 
                 i {
                     font-size: 1.3rem;
                     font-weight: lighter;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgba(82, 82, 82, 0.5);
                 }
             }
         }
@@ -90,7 +104,7 @@
     
     input {
         font-size: 1.1rem;
-        background-color: black;
+        background-color: rgb(33, 33, 33);
     }
 }
 
@@ -139,5 +153,5 @@
 .menu.open {
     transform: translateY(-75.8dvh);
     transform-origin: bottom;
-    transition: transform 150ms linear;
+    transition: transform 100ms ease-in;
 }
