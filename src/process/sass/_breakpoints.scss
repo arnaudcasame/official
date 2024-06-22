@@ -1,0 +1,25 @@
+@media  (min-width: 768px){
+	.menu {
+        left: calc(50% - 17.5rem);
+        min-width: 35rem;
+    }
+}
+
+@media  (max-height: 1080px){
+	.menu {
+        height: 75dvh;
+    }
+}
+
+@media (min-height: 1081px) and (max-height: 1180px){
+	.menu {
+        height: 70dvh;
+    }
+}
+
+
+@media  (min-height: 1181px){
+	.menu {
+        height: 60dvh;
+    }
+}
