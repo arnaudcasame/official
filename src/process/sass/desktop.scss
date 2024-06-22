@@ -10,7 +10,7 @@
 
 .icons {
     display: inline-grid;
-    grid-template-columns: 4.3rem 4.3rem 4.3rem;
+    grid-template-columns: 5rem 5rem 5rem;
     grid-template-rows: 5.2rem 5.2rem 5.2rem 5.2rem 5.2rem;
     column-gap: 8px;
     row-gap: 8px;
@@ -19,81 +19,26 @@
     height: calc(100% - 20px);
     padding: 10px;
 
-    .t-btn {
-        display: grid;
-        justify-items: center;
-        grid-template-columns: 100%;
-        overflow: hidden;
+    .t-btn.medium {
+        width: 5rem;
+        height: 5rem;
 
-        .icon {
-            margin-top: 5px;
+        .icon-inner {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+
             i {
                 font-size: 2.7rem;
             }
-        }
 
-        .label {
-            overflow: break-word;
-            span {
-                font-size: small;
-                color: $white;
-                font-weight: bold;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
+            .label {
+                color: rgba(240, 240, 240, 1);
                 overflow: hidden;
+                white-space: nowrap;
                 text-overflow: ellipsis;
+                font-size: 0.9rem;
             }
         }
-
-        padding: 0;
     }
-}
-
-.fa.blue {
-    color: rgb(18, 18, 255);
-}
-
-.fa.black {
-    color: rgb(0, 0, 0);
-}
-
-.fa.green {
-    color: rgb(0, 154, 0);
-}
-
-.fa.light-green {
-    color: rgb(53, 186, 53);
-}
-
-.fa.white {
-    color: $white;
-}
-
-.fa.orange {
-    color: rgb(255, 153, 0);
-}
-
-.fa.grey {
-    color: rgb(39, 39, 39);
-}
-
-.fa.sky-blue {
-    color: rgb(43, 234, 255);
-}
-
-.fa.red {
-    color: rgb(214, 6, 6);
-}
-
-.fa.violet {
-    color: rgb(47, 10, 255);
-}
-
-.fa.pink {
-    color: rgb(247, 10, 255);
-}
-
-.fa.aubergine {
-    color: rgb(80, 28, 81);
 }
