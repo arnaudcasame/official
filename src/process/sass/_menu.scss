@@ -119,6 +119,7 @@
         flex-direction: column;
         width: 80%;
         height: 95%;
+        overflow: hidden;
     
         .header {
             display: flex;
@@ -147,6 +148,11 @@
                 cursor: pointer;
             }
         }
+
+        .content {
+            width: 100%;
+            height: 100%;
+        }
     }
 }
 
@@ -154,4 +160,28 @@
     transform: translateY(-75.8dvh);
     transform-origin: bottom;
     transition: transform 100ms ease-in;
+}
+
+.pinned .inner .btns {
+	display: flex;
+    flex-wrap: wrap;
+    row-gap: 3px;
+    column-gap: 3px;
+}
+
+.content.x-scrollable {
+	overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+  	scrollbar-width: none;  /* Firefox */
+}
+
+.content.y-scrollable {
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+  	scrollbar-width: none;  /* Firefox */
+}
+
+.content.y-scrollable::-webkit-scrollbar,
+.content.x-scrollable::-webkit-scrollbar {
+    display: none;
 }

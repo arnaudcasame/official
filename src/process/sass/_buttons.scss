@@ -46,3 +46,28 @@ i.fa.gold{
 i.fa.white{
     color: $white;
 }
+
+.t-btn.small {
+    width: 4rem;
+    height: 4rem;
+}
+
+
+.btn-inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+
+    i {
+        font-size: 2.2rem;
+    }
+
+    .label {
+        font-size: small;
+        color: rgba(240, 240, 240, 1);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis !important;
+    }
+}
+
