@@ -26,7 +26,7 @@ fetch(dataUrl)
         const desktop = new Desktop();
         const taskBar = new TaskBar();
         taskBar.addEventListener('itemClick', (event)=> {
-            console.log(event);
+            // console.log(event);
             desktop.toggleMainMenu();
         });
     })

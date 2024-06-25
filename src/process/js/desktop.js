@@ -5,11 +5,34 @@ export class Desktop extends EventTarget {
 
         const icons = document.querySelector('#dsk-icons');
         this.mainMenu = document.querySelector('#dsk-main-menu');
+        this.mainMenu.setAttribute('tabindex', -1);
 
-        console.dir(icons.children);
+        this.mainMenu.addEventListener('blur', (e)=>{
+            const dataset = e.explicitOriginalTarget.dataset.name;
+            if(!dataset || (dataset && !dataset.includes('main-menu'))){
+                this.closeMainMenu();
+            }
+        });
+
+        // console.dir(icons.children);
+        // console.dir(this.mainMenu);
     }
 
     toggleMainMenu() {
-        this.mainMenu.classList.toggle('open');
+        if(this.mainMenu.classList.toggle('open')){
+            this.mainMenu.classList.add('open');
+            this.mainMenu.focus();
+        }
     }
+
+    launchMainMenu(){
+        this.mainMenu.classList.add('open');
+        this.mainMenu.focus();
+    }
+
+    closeMainMenu(){
+        this.mainMenu.classList.remove('open');
+    }
+
+
 }
