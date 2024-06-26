@@ -80,29 +80,6 @@
 
         padding: 10px;
 
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            width: 2rem;
-            height: 2rem;
-            border-radius: 5px;
-            border: none;
-            background-color: transparent;
-
-            i {
-                font-size: 1rem;
-                font-weight: 100;
-                color: white;
-            }
-
-            &:hover {
-                cursor: pointer;
-                background-color: rgba(240, 240, 240, .2);
-            }
-        }
-
         .field-wrapper  {
             position: relative;
 
@@ -135,6 +112,32 @@
     }
 
     .tool-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 10px;
+
+        .item {
+            display: flex;
+            column-gap: 15px;
+        }
+
+        .files-options {
+            display: flex;
+            column-gap: 10px;
+
+            padding-left: 10px;
+            border-left: 1px solid rgba(240, 240, 240, .2);
+
+            padding-right: 10px;
+            border-right: 1px solid rgba(240, 240, 240, .2);
+
+            .nav-btn:first-child {
+                transform: rotate(-90deg);
+            }
+        }
+
         background-color: rgb(26, 26, 39);
         border-bottom: 2px solid rgba(240, 240, 240, .6);
     }
