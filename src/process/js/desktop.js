@@ -7,6 +7,10 @@ export class Desktop extends EventTarget {
         this.mainMenu = document.querySelector('#dsk-main-menu');
         this.mainMenu.setAttribute('tabindex', -1);
 
+        this.mainMenu.addEventListener('focus', (e)=>{
+            console.log('On Main Menu Focus');
+        },{ preventScroll: true });
+
         this.mainMenu.addEventListener('blur', (e)=>{
             const dataset = e.explicitOriginalTarget.dataset.name;
             if(!dataset || (dataset && !dataset.includes('main-menu'))){
