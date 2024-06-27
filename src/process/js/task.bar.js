@@ -8,7 +8,11 @@ export class TaskBar extends EventTarget {
             if(item.nodeName === 'BUTTON'){
                 item.addEventListener('click', (e)=>{
                     this.emitItemClick(item.dataset.name);
-                });
+                },{ preventScroll: true });
+
+                item.addEventListener('focus', (e)=>{
+
+                },{ preventScroll: true });
             }
         }
 
