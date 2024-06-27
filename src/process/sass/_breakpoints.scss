@@ -5,9 +5,20 @@
     }
 }
 
+@media  (max-width: 1024px){
+	.desktop > .explorer {
+        width: 98%;
+        left: calc(50dvw - 49%);
+    }
+}
+
 @media  (max-height: 1080px){
 	.menu {
         height: 75dvh;
+    }
+
+    .desktop > .explorer {
+        height: 75%;
     }
 }
 
@@ -15,11 +26,19 @@
 	.menu {
         height: 70dvh;
     }
+
+    .desktop > .explorer {
+        height: 60%;
+    }
 }
 
 
 @media  (min-height: 1181px){
 	.menu {
         height: 60dvh;
+    }
+
+    .desktop > .explorer {
+        height: 65%;
     }
 }
