@@ -5,7 +5,7 @@
 
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 45px 50px 50px auto 25px;
+    grid-template-rows: 45px 50px 50px calc(100% - 170px) 25px;
     grid-template-areas:
         "header"
         "address"
@@ -144,14 +144,88 @@
 
     .middle {
         display: grid;
-        grid-template-columns: 16rem auto;
+        grid-template-columns: 14rem auto;
         grid-template-rows: 1fr;
 
         .side-bar {
-            border-right: 1px solid rgba(240, 240, 240, .2);
+            overflow-y: scroll;
+            
+
+            .inner-side {
+                display: flex;
+                flex-direction: column;
+                
+    
+                row-gap: 15px;
+                padding: 15px 3px;
+    
+    
+                border-right: 1px solid rgba(240, 240, 240, .2);
+    
+                hr {
+                    width: 80%;
+                    border-top: 1 solid rgba(240, 240, 240, .2);
+                    border-radius: 1px;
+                }
+    
+                .folders {
+                    display: flex;
+                    flex-direction: column;
+                    list-style: none;
+    
+                    padding: 0;
+                    margin: 0;
+    
+                    // border-bottom: 1px solid rgba(240, 240, 240, .2);
+    
+    
+                    color: rgba(240, 240, 240, 1);
+    
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+    
+                        padding: 0px 5px 0px 0px;
+                        border-radius: 4px;
+    
+                        &:hover {
+                            cursor: pointer;
+                            background-color: rgba(240, 240, 240, .3);
+                        }
+    
+                        i.fa-thumb-tack {
+                            font-size: small;
+                            color: rgba(240, 240, 240, .5);
+                        }
+    
+                        .rotater {
+                            transform: rotate(45deg);
+                        }
+                    }
+    
+                    .start {
+                        display: flex;
+                        column-gap: 10px;
+                        padding: 5px 5px 5px 2rem;
+    
+                        span {
+                            font-size: 0.95rem;
+                        }
+                    }
+    
+                    .collapsable {
+                        justify-content: start;
+                        padding-left: calc(1.5rem - 15px);
+                        .start {
+                            padding-left: 1rem;
+                        }
+                    }
+                }
+            }
         }
 
-        // .content {  }
+        // .content {}
 
         background-color: rgb(26, 26, 39);
     }
