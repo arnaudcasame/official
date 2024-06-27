@@ -1,7 +1,7 @@
 .desktop>.explorer {
     position: absolute;
-    right: 10px;
-    top: 20px;
+    left: calc(50dvw - 35%);
+    bottom: -150dvh;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -15,10 +15,16 @@
 
     width: 70%;
     height: 80%;
+    min-width: 665px;
+
     background-color: white;
     border-radius: 8px;
     z-index: 100;
     overflow: hidden;
+
+    transform: translateY(0dvh) scale(0, 0);
+    transition: transform 150ms linear;
+    transform-origin: bottom;
 
     .header {
         display: flex;
@@ -250,4 +256,10 @@
             color: rgba(240, 240, 240, 0.5);
         }
     }
+}
+
+.explorer.open {
+    transform: translateY(-160dvh) scale(1, 1);
+    transform-origin: bottom;
+    transition: transform 150ms ease-in;
 }
