@@ -7,6 +7,7 @@ export class TaskBar extends EventTarget {
         for (const item of centerTaskEl.children) {
             if(item.nodeName === 'BUTTON'){
                 item.addEventListener('click', (e)=>{
+                    e.preventDefault();
                     this.emitItemClick(item.dataset.name);
                 },{ preventScroll: true });
 
