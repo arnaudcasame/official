@@ -24,10 +24,11 @@
 
             .placeholder {
                 display: flex;
+                align-items: center;
                 column-gap: 12px;
                 padding: 0px 8px;
                 position: absolute;
-                top: calc(50% - 8px);
+                top: calc(50% - 10px);
                 color: white;
             }
 
