@@ -6,6 +6,7 @@
     position: absolute;
     bottom: -75dvh;
     left: calc(50% - (33%/2));
+    z-index: 100;
     width: 33%;
     height: 75dvh;
     overflow: hidden;
