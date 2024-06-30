@@ -1,7 +1,7 @@
 .window {
     position: absolute;
-    left: calc(50dvw - 35%);
-    bottom: -150dvh;
+    left: calc(50% - 35%);
+    bottom: calc(50% - 40%);
 
     display: grid;
     grid-template-columns: 1fr;
@@ -13,11 +13,14 @@
 
     width: 70%;
     height: 80%;
+
     min-width: 665px;
 
     border-radius: 8px;
     z-index: 2;
     overflow: hidden;
+    visibility: hidden;
+
 
     .header {
         display: flex;
@@ -93,13 +96,18 @@
         }
     }
 
-    transform: translateY(0dvh) scale(0, 0);
-    transition: transform 150ms linear;
+    transform: translateY(50%) scale(0, 0);
     transform-origin: bottom;
+    transition: transform 150ms linear, visibility 150ms ease;
+}
+
+.window.closed {
+    transition: transform 150ms linear;
 }
 
 .window.open {
-    transform: translateY(-160dvh) scale(1, 1);
+    visibility: visible;
+    transform: translateY(0) scale(1, 1);
     transform-origin: bottom;
-    transition: transform 150ms ease-in;
+    transition: transform 150ms ease-in, visibility 300ms ease;
 }
