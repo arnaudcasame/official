@@ -7,6 +7,30 @@ export class OSWindow {
         this.osWindow = document.querySelector('#os-window');
         this.osWindow.classList.add('open');
 
+        this.btns = document.querySelectorAll('.win-btn');
+
+        for(const btn of this.btns){
+            const winBtn = new WindowButton(btn);
+
+            winBtn.addEventListener('winBtnClick', (e)=>{
+
+                switch(e.detail){
+                    case 'min':
+                        this.hide();
+                        break;
+                    case 'max':
+                        this.restore();
+                        break;
+                    case 'med':
+                        this.maximize();
+                        break;
+                    case 'close':
+                        this.osWindow.parentElement.removeChild(this.osWindow);
+                        break;
+                }
+            })
+        }
+
         this.windowMoveHandler = this.onWindowMove.bind(this);
         this.mouseDownHandler = this.onMouseDown.bind(this);
         this.mouseUpHandler = this.onMouseUp.bind(this);
@@ -18,7 +42,7 @@ export class OSWindow {
         this.header.addEventListener('touchstart', this.mouseDownHandler);
 
 
-        console.dir(this.osWindow)
+        // console.dir(this.btns);
         this.explorer = new Explorer();
     }
 
@@ -31,7 +55,7 @@ export class OSWindow {
     }
 
     toggle() {
-        this.osWindow.classList.toggle('open');;
+        this.osWindow.classList.toggle('open');
     }
 
     onWindowMove(event){
@@ -60,5 +84,61 @@ export class OSWindow {
         document.removeEventListener('mousemove', this.windowMoveHandler);
         document.removeEventListener('touchmove', this.windowMoveHandler);
     }
+
+    restore() {
+        this.osWindow.style.width = '70%';
+        this.osWindow.style.height = '80%';
+        this.osWindow.style.left = 'calc(50% - 35%)';
+        this.osWindow.style.bottom = 'calc(50% - 40%)';
+        this.osWindow.style.top = 'calc(50% - 40%)';
+        this.osWindow.style.borderRadius = '8px';
+    }
+
+    maximize() {
+        this.osWindow.style.width = '100%';
+        this.osWindow.style.height = '100%';
+        this.osWindow.style.left = 0;
+        this.osWindow.style.bottom = 0;
+        this.osWindow.style.top = 0;
+        this.osWindow.style.borderRadius = 0;
+    }
+
+}
+
+
+class WindowButton extends EventTarget {
+    /**
+     * 
+     * @param {HTMLButtonElement} button 
+     */
+    constructor(button) {
+        super();
+        button.addEventListener('click', (e)=>{
+            
+            let button = e.target;
+            if(button.tagName === 'I'){
+                button = e.target.parentElement
+            }
+
+            const icon = button.firstElementChild;
+
+            if(button.dataset.name === 'max'){
+                icon.classList.replace('fa-window-maximize', 'fa-window-restore');
+                button.setAttribute('data-name', 'med');
+            }else if(button.dataset.name === 'med'){
+                icon.classList.replace('fa-window-restore', 'fa-window-maximize');
+                button.setAttribute('data-name', 'max');
+            }
+
+
+            this.emitWindowBtnClick(button.dataset.name);
+
+        }, true);
+    }
+
+    emitWindowBtnClick(name){
+        this.dispatchEvent(new CustomEvent('winBtnClick', { detail: name}));
+    }
+
 
 }
