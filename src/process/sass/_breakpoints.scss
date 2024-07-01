@@ -6,9 +6,9 @@
 }
 
 @media  (max-width: 1024px){
-	.desktop > .explorer {
+	.desktop > .window {
         width: 98%;
-        left: calc(50dvw - 49%);
+        left: calc(50% - 49%);
     }
 }
 
@@ -17,7 +17,7 @@
         height: 75dvh;
     }
 
-    .desktop > .explorer {
+    .desktop > .window {
         height: 75%;
     }
 }
@@ -27,7 +27,7 @@
         height: 70dvh;
     }
 
-    .desktop > .explorer {
+    .desktop > .window {
         height: 60%;
     }
 }
@@ -38,7 +38,7 @@
         height: 60dvh;
     }
 
-    .desktop > .explorer {
+    .desktop > .window {
         height: 65%;
     }
 }
