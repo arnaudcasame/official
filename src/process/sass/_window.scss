@@ -111,3 +111,7 @@
     transform-origin: bottom;
     transition: transform 150ms ease-in, visibility 300ms ease;
 }
+
+.window.app {
+    grid-template-rows: 45px calc(100% - 45px);
+}
