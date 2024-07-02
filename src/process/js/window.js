@@ -3,17 +3,17 @@ import { Explorer } from "./explorer";
 
 export class OSWindow {
 
-    constructor(){
-        this.osWindow = document.querySelector('#os-window');
+    constructor(id){
+        this.osWindow = document.querySelector(id);
         this.osWindow.classList.add('open');
 
-        this.btns = document.querySelectorAll('.win-btn');
+        this.btns = this.osWindow.querySelectorAll('.win-btn');
 
         for(const btn of this.btns){
             const winBtn = new WindowButton(btn);
 
             winBtn.addEventListener('winBtnClick', (e)=>{
-
+                console.log(id, winBtn);
                 switch(e.detail){
                     case 'min':
                         this.hide();

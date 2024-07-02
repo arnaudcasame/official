@@ -20,6 +20,7 @@ const mainHero = document.querySelector('#main-hero');
 mainHero.src = me;
 
 let osWindow = null;
+let browser = null;
 
 const dataUrl = 'https://gist.githubusercontent.com/arnaudcasame/18db83b6e6791c728bd992f70f1b7d4d/raw/90c3c791c023b9017a2517cdb6505ed093bded7a/portfolio.json'
 fetch(dataUrl)
@@ -40,7 +41,14 @@ fetch(dataUrl)
                     if (osWindow) {
                         osWindow.toggle();
                     } else {
-                        osWindow = new OSWindow();
+                        osWindow = new OSWindow('#os-window');
+                    }
+                    break;
+                case 'browser':
+                    if (browser) {
+                        browser.toggle();
+                    } else {
+                        browser = new OSWindow('#brow-edge');
                     }
                     break;
                 default:
