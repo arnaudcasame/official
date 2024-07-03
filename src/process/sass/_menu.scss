@@ -4,16 +4,19 @@
     grid-template-rows: 5rem 1fr 1fr 4.5rem;
 
     position: absolute;
-    bottom: -75dvh;
+    bottom: 8px;
     left: calc(50% - (33%/2));
-    z-index: 100;
+
     width: 33%;
-    height: 75dvh;
+    height: 75%;
+
     overflow: hidden;
+    visibility: hidden;
+    z-index: 100;
     border-radius: 8px;
     background-color: rgba(48, 48, 48, 0.95);
 
-    transform: translateY(0dvh);
+    transform: translateY(110%) scale(0, 0);
     transition: transform 100ms linear;
     transform-origin: bottom;
 
@@ -158,9 +161,10 @@
 }
 
 .menu.open {
-    transform: translateY(-75.8dvh);
+    transform: translateY(0) scale(1, 1);
     transform-origin: bottom;
     transition: transform 100ms ease-in;
+    visibility: visible;
 }
 
 .pinned .inner .btns {
